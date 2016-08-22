@@ -1,5 +1,6 @@
 ## Deploy
 
+    $ ./build.sh
     $ apex deploy --env-file env.json
     
 Where `env.json` should look like this:
