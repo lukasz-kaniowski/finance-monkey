@@ -1,0 +1,8 @@
+{
+  "name": "finance-monkey",
+  "description": "",
+  "memory": 128,
+  "timeout": 10,
+  "role": "arn:aws:iam::254822971173:role/finance-monkey_lambda_function",
+  "environment": {}
+}
