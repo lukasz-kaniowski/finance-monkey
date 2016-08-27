@@ -1,0 +1,28 @@
+{
+  "name": "finance-monkey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "aws-sdk": "^2.5.3",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lukasz-kaniowski/finance-monkey.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukasz-kaniowski/finance-monkey/issues"
+  },
+  "homepage": "https://github.com/lukasz-kaniowski/finance-monkey#readme"
+}
