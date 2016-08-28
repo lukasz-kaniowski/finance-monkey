@@ -1,16 +1,19 @@
 var hlScrapper = require('./hl-scrapper');
 var repository = require('./repository');
 
-exports.handle = function (e, ctx, cb) {
-  console.log('event: %j', e);
+exports.handle = (e, ctx, done) => {
   hlScrapper.total()
-    .then(function (total) {
+    .then(total => {
       console.log('total', total);
       return repository.save('HL', total);
     })
-    .then(() => cb())
+    .then(() => {
+      console.log('success');
+      done();
+    })
     .catch(function (error) {
-      cb({ event: JSON.stringify(error) });
+      console.log(`ERROR - ${JSON.stringify(error)}`);
+      done(`ERROR - ${JSON.stringify(error)}`);
     })
 };
 
