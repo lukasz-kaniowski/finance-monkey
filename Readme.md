@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lukasz-kaniowski/finance-monkey.svg?branch=master)](https://travis-ci.org/lukasz-kaniowski/finance-monkey)
+
 ## Deploy
 
     $ ./build.sh
