@@ -1,10 +1,12 @@
+sudo: required
 language: node_js
 node_js:
   - "4.3.2"
+services:
+  - docker
 before_script:
-  - wget http://dynamodb-local.s3-website-us-west-2.amazonaws.com/dynamodb_local_latest.tar.gz -O /tmp/dynamodb_local_latest.tar.gz
-  - tar -xzf /tmp/dynamodb_local_latest.tar.gz -C /tmp
-  - java -Djava.library.path=/tmp/DynamoDBLocal_lib -jar /tmp/DynamoDBLocal.jar -inMemory &
+  - docker pull dwmkerr/dynamodb
+  - docker run -d -p 8000:8000 dwmkerr/dynamodb
   - sleep 2
   - ./build.sh
 addons:
