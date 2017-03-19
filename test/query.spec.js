@@ -1,3 +1,4 @@
+'use strict';
 const dynamoDb = require('./support/in-memory-dynamodb');
 const context = require('aws-lambda-mock-context');
 const expect = require('chai').expect;
