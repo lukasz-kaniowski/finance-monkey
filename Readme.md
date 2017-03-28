@@ -1,5 +1,12 @@
 [![Build Status](https://travis-ci.org/lukasz-kaniowski/finance-monkey.svg?branch=master)](https://travis-ci.org/lukasz-kaniowski/finance-monkey)
 
+## Infrastructure
+
+Apex is using terraform under the cover. 
+
+    $ apex infra plan
+    $ apex infra apply
+
 ## Deploy
 
     $ ./build.sh

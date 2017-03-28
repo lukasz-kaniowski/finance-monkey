@@ -10,7 +10,8 @@ resource "aws_iam_policy" "access_dynamodb" {
       "Action": [
         "dynamodb:DeleteItem",
         "dynamodb:GetItem",
-        "dynamodb:PutItem"
+        "dynamodb:PutItem",
+        "dynamodb:Scan"
       ],
       "Effect": "Allow",
       "Resource": "*"

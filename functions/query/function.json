@@ -1,0 +1,5 @@
+{
+  "memory": 128,
+  "timeout": 30,
+  "role": "arn:aws:iam::254822971173:role/finance-monkey-hlScrapper-role"
+}
