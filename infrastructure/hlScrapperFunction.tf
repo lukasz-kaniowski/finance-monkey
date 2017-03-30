@@ -75,6 +75,33 @@ resource "aws_iam_policy_attachment" "finance-monkey-logs" {
   policy_arn = "${aws_iam_policy.logs.arn}"
 }
 
+resource "aws_iam_role" "finance-monkey_simple-lambda" {
+  name = "finance-monkey_simple-lambda"
+  assume_role_policy = <<EOF
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "lambda.amazonaws.com"
+      },
+      "Action": "sts:AssumeRole"
+    }
+  ]
+}
+EOF
+}
+
+resource "aws_iam_role_policy_attachment" "finance-monkey-AWSLambdaBasicExecutionRole" {
+  role = "${aws_iam_role.finance-monkey_simple-lambda.name}"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+resource "aws_iam_role_policy_attachment" "finance-monkey-AWSLambdaRole" {
+  role = "${aws_iam_role.finance-monkey_simple-lambda.name}"
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaRole"
+}
 
 resource "aws_dynamodb_table" "finance-monkey" {
   name = "finance-monkey"

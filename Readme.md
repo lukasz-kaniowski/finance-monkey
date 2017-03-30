@@ -35,4 +35,32 @@ Run tests
     
     $ npm test
 
+## Alexa
+
+Alexa lambda function requires *Alexa Skills Kit* trigger to be added. 
+This need to be done manually on aws console. 
+ 
+In [amazon developer console] configure alexa skill
+
+1. Point to alexa lambda function 
+2. Copy intent
+```json
+{
+  "intents": [
+    {
+      "intent": "portfolio"
+    }
+  ]
+}  
+```
+3. Copy utterances, ie.
+```text
+portfolio today
+portfolio about today
+portfolio about status
+portfolio status
+```
+
+ 
+[amazon developer console]: https://developer.amazon.com
 [dynamodb local]: https://aws.amazon.com/blogs/aws/dynamodb-local-for-desktop-development/
